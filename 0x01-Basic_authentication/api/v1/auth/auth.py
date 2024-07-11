@@ -1,6 +1,12 @@
+#!/usr/bin/env python3
+"""
+The Auth class
+"""
+
 from tabnanny import check
 from flask import request
 from typing import TypeVar, List
+User = TypeVar('User')
 
 class Auth:
     """ This is to manage API authentication
@@ -21,7 +27,7 @@ class Auth:
         """ returns None - request and is flask request object
         """
         if request is None:
-            return none
+            return None
         return request.headers.get("Authorization")
         
     def current_user(self, request=None) -> TypeVar('User'):
